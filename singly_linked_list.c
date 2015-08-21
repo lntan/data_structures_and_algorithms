@@ -46,6 +46,7 @@ void destroy_list(LIST *pList) {
   }
 }
 
+// Append — Pushes the given value on to the end of this list
 void push(LIST *pList, int val) {
   NODE* pNode = create_node(val);
   if (pList->tail) {
@@ -57,6 +58,7 @@ void push(LIST *pList, int val) {
   }
 }
 
+// Prepends objects to the front the list
 void unshift(LIST *pList, int val) {
   NODE* pNode = create_node(val);
   if (pList->head) {
@@ -68,6 +70,7 @@ void unshift(LIST *pList, int val) {
   }
 }
 
+// Removes the first element of the list and returns it
 NODE* shift(LIST *pList) {
   if(!pList->head) {
     return NULL;
@@ -77,6 +80,7 @@ NODE* shift(LIST *pList) {
   return pNode;
 }
 
+// Removes the last element from the list and returns it
 NODE* pop(LIST *pList) {
   if(!pList->head) {
     return NULL;
@@ -102,6 +106,7 @@ NODE* pop(LIST *pList) {
   return pNode;
 }
 
+// Deletes elements that have the specified value
 int delete_at(LIST *pList, int val) {
   NODE* pRemoved;
   while(pList->head && pList->head->val == val) {
@@ -129,6 +134,7 @@ int delete_at(LIST *pList, int val) {
   return 0;
 }
 
+// Create a new list including elements that have the specified value
 LIST select(LIST *pList, int val) {
   LIST list = create_list();
   NODE* pNode = pList->head;
@@ -142,6 +148,7 @@ LIST select(LIST *pList, int val) {
   return list;
 }
 
+// Returns the number of elements in the list
 int length(LIST *pList) {
   int count = 0;
   NODE* current = pList->head;
@@ -152,7 +159,7 @@ int length(LIST *pList) {
   return count;
 }
 
-
+// Find the max value in the list
 int max(LIST *pList) {
   if (pList->head == pList->tail) {
     return pList->head->val;
@@ -170,47 +177,5 @@ int max(LIST *pList) {
 
 
 int main() {
-  LIST list = create_list();
-  //push(&list, 7);
-  //push(&list, 7);
-  //push(&list, 8);
-  push(&list, 7);
-
-  print_list(&list);
-  printf("length: %d", max(&list));
-  printf("\n");
-
-
-  LIST list_1 = select(&list, 8);
-
-  //delete_at(&list, 7);
-
-  // // unshift(&list, 1);
-  // // unshift(&list, 2);
-  // // unshift(&list, 3);
-
-  // while(1) {
-  //   NODE *pNode = shift(&list);
-  //   if(!pNode) {
-  //     break;
-  //   }
-  //   printf("%d ", pNode->val);
-  // }
-
-  // while(1) {
-  //   NODE *pNode = pop(&list);
-  //   if(!pNode) {
-  //     break;
-  //   }
-  //   printf("%d ", pNode->val);
-  // }
-
-  print_list(&list_1);
-  printf("\n");
-  // shift(&list);
-  // print_list(&list);
-  // printf("\n");
-  destroy_list(&list);
-  destroy_list(&list_1);
   return 0;
 }
