@@ -134,7 +134,7 @@ int delete_at(LIST *pList, int val) {
   return 0;
 }
 
-// Create a new list including elements that have the specified value
+// Creates a new list including elements that have the specified value
 LIST select(LIST *pList, int val) {
   LIST list = create_list();
   NODE* pNode = pList->head;
@@ -159,7 +159,7 @@ int length(LIST *pList) {
   return count;
 }
 
-// Find the max value in the list
+// Finds the max value in the list
 int max(LIST *pList) {
   if (pList->head == pList->tail) {
     return pList->head->val;
