@@ -35,6 +35,7 @@ void print_list(LIST *pList) {
     printf("%d ", current->val);
     current = current->next;
   }
+  printf("\n");
 }
 
 void destroy_list(LIST *pList) {
@@ -177,5 +178,37 @@ int max(LIST *pList) {
 
 
 int main() {
+  LIST list = create_list();
+  push(&list, 8);
+  push(&list, 10);
+  push(&list, 10);
+  push(&list, 7);
+  print_list(&list); // 8, 10, 10, 7
+
+  unshift(&list, 2);
+  unshift(&list, 8);
+  unshift(&list, 3);
+  print_list(&list); // 3, 8, 2, 8, 10, 10, 7
+
+  printf("%d\n", shift(&list)->val); // 3
+  printf("%d\n", shift(&list)->val); // 8
+  print_list(&list); // 2, 8, 10, 10, 7
+
+
+  printf("%d\n", pop(&list)->val); // 7
+  print_list(&list); // 2, 8, 10, 10
+
+  delete_at(&list, 10);
+  print_list(&list); // 2, 8
+
+  printf("max: %d\n", max(&list)); // 8
+
+  unshift(&list, 2);
+  LIST new_list = select(&list, 2);
+  print_list(&new_list); //2, 2
+
+  destroy_list(&list);
+  destroy_list(&new_list);
+  printf("\n");
   return 0;
 }
