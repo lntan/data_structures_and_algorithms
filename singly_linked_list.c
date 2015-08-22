@@ -206,6 +206,7 @@ int main() {
   unshift(&list, 2);
   LIST new_list = select(&list, 2);
   print_list(&new_list); //2, 2
+  printf("%d\n", length(&new_list)); // 2
 
   destroy_list(&list);
   destroy_list(&new_list);
