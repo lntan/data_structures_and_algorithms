@@ -47,7 +47,7 @@ void destroy_list(LIST *pList) {
   }
 }
 
-// Append — Pushes the given value on to the end of the list
+// Append — Pushes the given value to the end of the list
 void push(LIST *pList, int val) {
   NODE* pNode = create_node(val);
   if (pList->tail) {
