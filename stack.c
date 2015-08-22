@@ -60,14 +60,23 @@ int main() {
   push(&stack, 1);
   push(&stack, 2);
   push(&stack, 3);
+  push(&stack, 4);
+  printf("%d\n", top(&stack)); // 4
+  printf("%d\n", pop(&stack)); // 4
+  printf("%d\n", pop(&stack)); // 3
 
-  printf("%d\n", top(&stack)); // 3
-
-  while(!is_empty(&stack)) { // 3 2 1
+  while(!is_empty(&stack)) { // 2 1
     int val = pop(&stack);
     printf("%d ", val);
   }
+  printf("\n");
 
+  push(&stack, 5);
+  push(&stack, 10);
+  while(!is_empty(&stack)) { // 10 15
+    int val = pop(&stack);
+    printf("%d ", val);
+  }
   printf("\n");
   return 0;
 }
