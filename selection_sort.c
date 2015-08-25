@@ -27,7 +27,6 @@ int main() {
 void selection_sort(int *a, int n) {
   for(int i = 0; i < n - 1; i++) {
     int min_index = min(a, i + 1, n - 1);
-    printf("%d\n", min_index);
     if (a[i] > a[min_index]) {
       int temp = a[i];
       a[i] = a[min_index];
