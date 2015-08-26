@@ -22,37 +22,12 @@ void push(node_t** node_ref, int data) {
   *node_ref = new_node;
 }
 
+
 void merge_sort(node_t** head_ref);
 void split(node_t*, node_t**, node_t**);
 void merge(node_t**, node_t*, node_t*);
 
 int main() {
-  // node_t *head = NULL;
-  // push(&head, 5);
-  // push(&head, 10);
-  // // push(&head, 5);
-  // // push(&head, 20);
-  // // push(&head, 3);
-  // // push(&head, 2);
-  // // push(&head, 8);
-  // print_list(head);
-  // merge_sort(&head);
-  // printf("\n");
-  // print_list(head);
-
-  // // LIST list = create_list();
-  // // insert(&list, 10);
-  // // insert(&list, 15);
-  // // insert(&list, 7);
-  // // insert(&list, 9);
-  // // insert(&list, 13);
-  // // insert(&list, 20);
-  // // insert(&list, 18);
-  // // insert(&list, 4);
-  // // print_list(&list);
-  // // merge_sort(&list);
-  // // printf("\n");
-  // // print_list(&list);
   node_t *head = NULL;
 
   push(&head, 10);
@@ -70,21 +45,6 @@ int main() {
   print_list(head);
 
 
-  // push(&head_a, 7);
-  // push(&head_a, 6);
-  // push(&head_a, 2);
-
-  // push(&head_b, 23);
-  // push(&head_b, 20);
-  // push(&head_b, 15);
-  // push(&head_b, 8);
-
-  // node_t *head_a;
-  // node_t *head_b;
-  // push(&head_a, 10);
-  // push(&head_b, 15);
-  // merge(&head, head_a, head_b);
-  // print_list(head);
   printf("\n");
   return 0;
 }
@@ -133,14 +93,6 @@ void merge(node_t** head_ref, node_t* head_a, node_t* head_b) {
       head_b->next = NULL;
       if (head) head_b->next = head;
       head = head_b;
-
-      // printf("\n8888\n");
-      // node_t* temp = head;
-      // printf("%d\n", temp->data);
-      // temp = temp->next;
-      // printf("%d\n", temp->data);
-      // printf("9999\n");
-
       head_b = next;
     }
   }
